@@ -1,16 +1,15 @@
 import { createContext, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { usuarios } from '../../db.js' // Importa los usuarios
+import { usuarios } from '../../db.js'
 
-const AuthContext = createContext()
+export const AuthContext = createContext()
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const navigate = useNavigate()
 
   const login = (username, password) => {
-    // Validación usando db.js
     const userFound = usuarios.find(
       (u) => u.username === username && u.password === password
     )
