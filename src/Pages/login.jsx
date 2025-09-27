@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAuth } from "../Context/AuthContext.jsx";
+import { useAuth } from "../Context/useAuth.js";
 import "../Pages/login.css"; // Importa tus estilos personalizados
 
 function Login() {

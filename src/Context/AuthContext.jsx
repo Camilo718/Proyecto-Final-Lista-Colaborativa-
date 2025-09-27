@@ -1,11 +1,11 @@
-import { createContext, useState, useContext } from 'react'
+import { createContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { usuarios } from '../../db.js'
 
-export const AuthContext = createContext()
+const AuthContext = createContext()
 
-export function AuthProvider({ children }) {
+function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const navigate = useNavigate()
 
@@ -36,6 +36,4 @@ export function AuthProvider({ children }) {
   )
 }
 
-export function useAuth() {
-  return useContext(AuthContext)
-}
+export { AuthContext, AuthProvider }
